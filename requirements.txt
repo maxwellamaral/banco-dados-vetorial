@@ -1,0 +1,21 @@
+# Orquestração e IA
+langchain==0.2.0
+langchain-community==0.2.0
+langchain-google-genai==1.0.3  # Essencial para Gemini
+langchain-core==0.2.0
+
+# Banco Vetorial
+langchain-qdrant==0.1.0
+qdrant-client==1.9.0           # Cliente oficial do Qdrant
+
+# Processamento de Dados
+pydantic==2.7.1                # Para estruturar metadados (Scanner)
+lark==1.1.9                    # Essencial para Self-Querying
+pypdf==4.2.0                   # Leitura de PDFs
+
+# Utilitários
+python-dotenv==1.0.1           # Gerenciamento de chaves
+jupyter                        # Para rodar notebooks
+matplotlib                     # Para plotar gráficos de trade-off (Módulo 1)
+numpy                          # Cálculos vetoriais manuais
+tiktoken                       # Contagem de tokens (útil para debug)
