@@ -19,3 +19,4 @@ jupyter                        # Para rodar notebooks
 matplotlib                     # Para plotar gráficos de trade-off (Módulo 1)
 numpy                          # Cálculos vetoriais manuais
 tiktoken                       # Contagem de tokens (útil para debug)
+ipykernel                      # Kernel do Jupyter para ambientes virtuais
