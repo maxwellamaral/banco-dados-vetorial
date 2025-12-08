@@ -1,0 +1,66 @@
+# Dockerfile para Ollama com modelos de embeddings pré-instalados
+# Baseado em ollama/ollama:latest com modelos necessários para o curso
+# Data: 2025-12-08
+
+FROM ollama/ollama:latest
+
+# Instalar curl se não estiver disponível
+USER root
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Criar script para baixar modelos
+RUN echo '#!/bin/bash\n\
+set -e\n\
+echo "🚀 Iniciando Ollama em background..."\n\
+ollama serve &\n\
+OLLAMA_PID=$!\n\
+\n\
+echo "⏳ Aguardando Ollama ficar online..."\n\
+for i in {1..30}; do\n\
+    if curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then\n\
+        echo "✅ Ollama está online!"\n\
+        break\n\
+    fi\n\
+    echo "   Tentativa $i/30..."\n\
+    sleep 2\n\
+done\n\
+\n\
+echo "📦 Baixando modelos de embeddings..."\n\
+echo ""\n\
+\n\
+echo "1️⃣ Baixando all-minilm:latest (384 dim, ~23MB)..."\n\
+ollama pull all-minilm:latest\n\
+echo "✅ all-minilm:latest instalado!"\n\
+echo ""\n\
+\n\
+echo "2️⃣ Baixando nomic-embed-text:latest (768 dim, ~274MB)..."\n\
+ollama pull nomic-embed-text:latest\n\
+echo "✅ nomic-embed-text:latest instalado!"\n\
+echo ""\n\
+\n\
+echo "3️⃣ Baixando mxbai-embed-large:latest (1024 dim, ~670MB)..."\n\
+ollama pull mxbai-embed-large:latest\n\
+echo "✅ mxbai-embed-large:latest instalado!"\n\
+echo ""\n\
+\n\
+echo "🎉 Todos os modelos foram instalados com sucesso!"\n\
+echo "📋 Modelos disponíveis:"\n\
+ollama list\n\
+echo ""\n\
+\n\
+echo "🛑 Parando Ollama temporário..."\n\
+kill $OLLAMA_PID\n\
+wait $OLLAMA_PID 2>/dev/null || true\n\
+\n\
+echo "✅ Setup completo! Container pronto para uso."\n\
+' > /usr/local/bin/setup-models.sh && chmod +x /usr/local/bin/setup-models.sh
+
+# Executar setup de modelos durante o build
+# NOTA: Isso aumenta o tempo de build mas garante que os modelos estejam disponíveis
+RUN /usr/local/bin/setup-models.sh
+
+# Expor porta padrão
+EXPOSE 11434
+
+# Comando padrão (serve Ollama)
+CMD ["ollama", "serve"]

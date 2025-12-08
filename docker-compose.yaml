@@ -7,7 +7,10 @@ services:
   # 1️⃣ OLLAMA - Serviço de Embeddings e LLMs
   # ============================================================
   ollama:
-    image: ollama/ollama:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
+    image: ollama-embeddings-custom:latest
     container_name: ollama-embeddings
     ports:
       - "${OLLAMA_API_PORT:-11434}:11434"      # API OpenAI-compatible
