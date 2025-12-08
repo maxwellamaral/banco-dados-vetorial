@@ -1,0 +1,82 @@
+# requirements.txt para Jupyter Lab
+# Dependencies para Lab de Banco de Dados Vetorial
+
+# ============================================================
+# Core Libraries
+# ============================================================
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# ============================================================
+# Embeddings & Vector Operations
+# ============================================================
+# Sentence Transformers (local embeddings)
+sentence-transformers>=2.2.0
+
+# FAISS (Facebook AI Similarity Search)
+faiss-cpu>=1.7.4
+# Se tiver GPU: faiss-gpu ao invés de faiss-cpu
+
+# ============================================================
+# Vector Database Clients
+# ============================================================
+# Qdrant Python SDK
+qdrant-client>=1.7.0
+
+# OpenAI (para comparativos com SaaS)
+openai>=1.3.0
+
+# Google Generative AI
+google-generativeai>=0.3.0
+langchain-google-genai>=0.1.0
+
+# ============================================================
+# LM Studio / Local LLM
+# ============================================================
+# Compatível com OpenAI, funciona para LM Studio também
+requests>=2.31.0
+pydantic>=2.0.0
+
+# ============================================================
+# Data Processing & Utilities
+# ============================================================
+python-dotenv>=1.0.0
+tqdm>=4.66.0  # Progress bars
+pyyaml>=6.0   # YAML parsing
+
+# ============================================================
+# Database & Persistence
+# ============================================================
+# PostgreSQL (metadados)
+psycopg2-binary>=2.9.0
+
+# SQLAlchemy (ORM)
+sqlalchemy>=2.0.0
+
+# ============================================================
+# Visualization & Analysis
+# ============================================================
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# ============================================================
+# Development & Testing
+# ============================================================
+pytest>=7.4.0
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0
+
+# ============================================================
+# Logging & Monitoring
+# ============================================================
+loguru>=0.7.0
+
+# ============================================================
+# Code Quality (Opcional)
+# ============================================================
+# black>=23.0.0
+# flake8>=6.0.0
+# pylint>=2.17.0

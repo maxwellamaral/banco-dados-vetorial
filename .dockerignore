@@ -1,0 +1,53 @@
+# .dockerignore para otimizar build do Jupyter
+# Ignorar arquivos desnecessários no contexto de build
+
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data e volumes (não precisam no build)
+data/notebooks/
+data/pdfs/
+data/embeddings/
+data/faiss_indices/
+data/qdrant_storage/
+data/ollama-data/
+data/lm-studio-data/
+data/m-studio-data/
+
+# Docker
+docker-compose*.yaml
+Dockerfile*
+!Dockerfile.jupyter
+
+# Testes
+test_*.py
+*.pyc
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

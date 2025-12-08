@@ -1,0 +1,16 @@
+# Dockerfile para Jupyter Lab com dependências pré-instaladas
+FROM jupyter/datascience-notebook:latest
+
+USER root
+
+# Copiar requirements
+COPY requirements-jupyter.txt /tmp/requirements.txt
+
+# Instalar dependências (executado apenas no build)
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Voltar para usuário padrão
+USER $NB_UID
+
+# Comando padrão
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
