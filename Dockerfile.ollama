@@ -43,6 +43,21 @@ ollama pull mxbai-embed-large:latest\n\
 echo "✅ mxbai-embed-large:latest instalado!"\n\
 echo ""\n\
 \n\
+echo "4️⃣ Baixando llama3.2:1b (LLM, ~1.3GB)..."\n\
+ollama pull llama3.2:1b\n\
+echo "✅ llama3.2:1b instalado!"\n\
+echo ""\n\
+\n\
+echo "4️⃣ Baixando gpt-oss:latest (LLM, ~13.0GB)..."\n\
+ollama pull gpt-oss:latest\n\
+echo "✅ gpt-oss:latest instalado!"\n\
+echo ""\n\
+\n\
+echo "4️⃣ Baixando qwen3-vl:8b (LLM, ~6.1GB)..."\n\
+ollama pull qwen3-vl:8b\n\
+echo "✅ qwen3-vl:8b instalado!"\n\
+echo ""\n\
+\n\
 echo "🎉 Todos os modelos foram instalados com sucesso!"\n\
 echo "📋 Modelos disponíveis:"\n\
 ollama list\n\
@@ -62,5 +77,6 @@ RUN /usr/local/bin/setup-models.sh
 # Expor porta padrão
 EXPOSE 11434
 
-# Comando padrão (serve Ollama)
-CMD ["ollama", "serve"]
+# ENTRYPOINT e CMD separados para permitir override
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["ollama serve"]
