@@ -1,0 +1,4 @@
+model,dimensions,avg_response_time_ms,sim_12_similar,sim_13_different,discrimination
+nomic-embed-text,768,97.88,0.8278,0.5894,0.2384
+mxbai-embed-large,1024,400.2,0.8755,0.4915,0.384
+all-minilm,384,307.84,0.6473,0.2711,0.3761
