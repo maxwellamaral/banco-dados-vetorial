@@ -43,6 +43,11 @@ ollama pull mxbai-embed-large:latest\n\
 echo "✅ mxbai-embed-large:latest instalado!"\n\
 echo ""\n\
 \n\
+echo "3️⃣ Baixando embeddinggemma:latest (768 dim, ~620MB)..."\n\
+ollama pull embeddinggemma:latest\n\
+echo "✅ embeddinggemma:latest instalado!"\n\
+echo ""\n\
+\n\
 echo "4️⃣ Baixando llama3.2:1b (LLM, ~1.3GB)..."\n\
 ollama pull llama3.2:1b\n\
 echo "✅ llama3.2:1b instalado!"\n\
