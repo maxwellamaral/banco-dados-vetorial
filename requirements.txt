@@ -22,3 +22,5 @@ langchain-openai==1.1.0
  langchain-ollama==1.0.0
  ollama==0.6.1
  faker==38.2.0
+ reportlab>=4.4.6
+ langchain-text-splitters>=1.0.0

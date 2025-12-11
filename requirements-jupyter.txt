@@ -36,6 +36,10 @@ langchain-google-genai>=0.1.0
  langchain-ollama==1.0.0
  ollama==0.6.1
 
+ # Outros
+ reportlab>=4.4.6
+ langchain-text-splitters>=1.0.0
+ 
 # ============================================================
 # LM Studio / Local LLM
 # ============================================================
