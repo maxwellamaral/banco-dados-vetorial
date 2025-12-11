@@ -15,6 +15,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "faiss-cpu" },
+    { name = "faker" },
     { name = "ipykernel" },
     { name = "jupyter" },
     { name = "langchain" },
@@ -42,6 +43,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "faiss-cpu", specifier = ">=1.13.1" },
+    { name = "faker", specifier = ">=38.2.0" },
     { name = "ipykernel", specifier = ">=7.1.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "langchain", specifier = ">=1.1.0" },
@@ -867,6 +869,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/00/2c/c13c816546ffc5b0b7f8ca64811b24b17d73ff6382464f1ab0eed87b7753/faiss_cpu-1.13.1-cp313-cp313-win_arm64.whl", hash = "sha256:24cb2d6ce2459c94e15a6cecfed15ff8d9f997aed7bae4037c0f045022030cb3", size = 8508631, upload-time = "2025-12-05T01:02:22.751Z" },
     { url = "https://files.pythonhosted.org/packages/45/6f/adf064c644a80c0ebd499144ccbab672c9946361132617ceafcc48819771/faiss_cpu-1.13.1-cp314-cp314-win_amd64.whl", hash = "sha256:5195ab9149c563cafe4da8ab4cc0b84b177cbb1f8aa897a8c199e11ef4f37e16", size = 18816994, upload-time = "2025-12-05T01:02:25.055Z" },
     { url = "https://files.pythonhosted.org/packages/61/53/042f863a6a1202af8eec94604dc8b192319253faabb8ee6070297a24c091/faiss_cpu-1.13.1-cp314-cp314-win_arm64.whl", hash = "sha256:ffc58173e24026ee4dc08c50dd3506ad553d4b2103892500b0d4ae9344027d57", size = 8511280, upload-time = "2025-12-05T01:02:27.163Z" },
+]
+
+[[package]]
+name = "faker"
+version = "38.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "tzdata" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/64/27/022d4dbd4c20567b4c294f79a133cc2f05240ea61e0d515ead18c995c249/faker-38.2.0.tar.gz", hash = "sha256:20672803db9c7cb97f9b56c18c54b915b6f1d8991f63d1d673642dc43f5ce7ab", size = 1941469, upload-time = "2025-11-19T16:37:31.892Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/17/93/00c94d45f55c336434a15f98d906387e87ce28f9918e4444829a8fda432d/faker-38.2.0-py3-none-any.whl", hash = "sha256:35fe4a0a79dee0dc4103a6083ee9224941e7d3594811a50e3969e547b0d2ee65", size = 1980505, upload-time = "2025-11-19T16:37:30.208Z" },
 ]
 
 [[package]]
