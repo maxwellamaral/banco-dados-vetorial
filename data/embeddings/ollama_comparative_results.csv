@@ -1,5 +1,5 @@
 model,dimensions,avg_response_time_ms,sim_12_similar,sim_13_different,discrimination
-nomic-embed-text,768,281.82,0.8278,0.5894,0.2384
-mxbai-embed-large,1024,683.89,0.8755,0.4915,0.384
-all-minilm,384,292.2,0.6473,0.2711,0.3761
-embeddinggemma,768,571.42,0.8408,0.2676,0.5732
+nomic-embed-text,768,821.76,0.8278,0.5894,0.2384
+mxbai-embed-large,1024,570.06,0.8755,0.4915,0.384
+all-minilm,384,376.35,0.6473,0.2711,0.3761
+embeddinggemma,768,575.1,0.8408,0.2676,0.5732
