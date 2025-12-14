@@ -1,5 +1,26 @@
-.venv
-__pycache__/    
-.env
+# Ambientes virtuais
+venv/
+env/
+.venv/
+
+# IDE / VSCode
+.vscode/
+*.swp
+*~
+
+# Arquivos de dados do Qdrant
 data/qdrant_storage
+
+# Arquivos de índice FAISS
+*.faiss
+*.faiss.index
+
+# Arquivos pickle (embeddings, dados serializados)
+*.pkl
+*.pickle
+
+# Outros
 backup/
+__pycache__/
+*.pyc
+.env
