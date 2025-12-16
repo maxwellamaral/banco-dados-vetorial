@@ -9,20 +9,30 @@ O projeto é ideal para quem deseja entender os fundamentos por trás de aplica�
   * **Geração de Embeddings:** 
     - APIs cloud (OpenAI, Google Gemini)
     - Modelos locais (Ollama: nomic-embed-text, mxbai-embed-large, all-minilm)
-  * **Armazenamento Vetorial:** Persistência e indexação com FAISS (Facebook AI Similarity Search)
+    - Suporte a Matryoshka Embeddings (redução de dimensões)
+  * **Armazenamento Vetorial:** 
+    - FAISS (desenvolvimento e prototipação)
+    - Qdrant (produção e escalabilidade)
   * **Busca Semântica:** 
-    - Similaridade cosseno
+    - Similaridade de cosseno
     - Distância euclidiana (L2)
     - Conversão para ângulos
-  * **Exemplos de RAG:** 
-    - Com APIs cloud (OpenAI GPT-3.5/4)
+  * **RAG (Retrieval-Augmented Generation):** 
+    - Com APIs cloud (OpenAI GPT-3.5/4, Google Gemini)
     - Com modelos locais (Ollama)
+    - Implementações com LangChain e LCEL
+  * **Estratégias de Chunking:**
+    - Análise de tokens vs chunks
+    - Chunking recursivo com separadores hierárquicos
+    - Otimização de tamanho e overlap
   * **Comparativos:** Benchmarks de performance e qualidade entre modelos de embeddings
 
 ## 🛠️ Tecnologias Utilizadas
 
   * **Linguagem:** Python 3.10+
-  * **Banco Vetorial:** FAISS (Facebook AI Similarity Search)
+  * **Bancos Vetoriais:** 
+    - FAISS (Facebook AI Similarity Search) - Para desenvolvimento e prototipação
+    - Qdrant - Para aplicações em produção
   * **Embeddings:** OpenAI / Google Gemini / Ollama (local)
   * **Frameworks:** LangChain
   * **Containerização:** Docker / Docker Compose
@@ -81,21 +91,28 @@ jupyter notebook
 ```
 src/
 ├── 1_fundamentos/              # Conceitos básicos de embeddings e vetores
-│   ├── espaco_3d.ipynb                      # Visualização de vetores em 3D
-│   ├── lab_1.0_similaridade_cosseno.ipynb   # Fundamentos de similaridade
-│   ├── lab_1.1_matrioska.ipynb              # Embeddings matryoshka
-│   ├── lab_1.2_comparativos.ipynb           # OpenAI vs Google Gemini
-│   └── lab_1.3_comparativos_ollama.ipynb    # Comparação com modelos locais
+│   ├── lab_1.1_espaços.ipynb                # Visualização de vetores em 3D
+│   ├── lab_1.2_similaridade_cosseno.ipynb   # Fundamentos de similaridade de cosseno
+│   ├── lab_1.3_matrioska.ipynb              # Embeddings Matryoshka (redução de dimensões)
+│   ├── lab_1.4_comparativos.ipynb           # Comparativo OpenAI vs Google Gemini
+│   └── lab_1.5_comparativos_ollama.ipynb    # Comparativo com modelos locais (Ollama)
 │
 ├── 2_buscas/                   # Busca semântica com FAISS
-│   ├── lab_2.0_ollama.ipynb                 # Configuração Ollama
-│   ├── lab_2.1_buscas_nuvem.ipynb           # FAISS + APIs cloud
-│   ├── lab_2.2_buscas_local.ipynb           # FAISS + Ollama
-│   └── lab_2.3_buscas_local_comparativo.ipynb  # Benchmarks
+│   ├── lab_2.0_ollama_testes.ipynb          # Testes e configuração do Ollama
+│   ├── lab_2.1_buscas_nuvem.ipynb           # FAISS + APIs cloud (OpenAI/Gemini)
+│   ├── lab_2.2_buscas_local.ipynb           # FAISS + Ollama (modelos locais)
+│   └── lab_2.3_buscas_local_comparativo.ipynb  # Benchmarks de performance
 │
-└── 3_rag_persistencia/         # RAG (Retrieval-Augmented Generation)
-    ├── lab_3.1_mini_rag.ipynb               # RAG com OpenAI
-    └── lab_3.2_mini_rag_ollama.ipynb        # RAG com Ollama (local)
+├── 3_rag_persistencia/         # RAG e Persistência de Vetores
+│   ├── lab_3.1_persistencia_nuvem.ipynb     # Persistência FAISS com APIs cloud
+│   ├── lab_3.2_persistencia_ollama.ipynb    # Persistência FAISS com Ollama
+│   ├── lab_3.3_chunks_tokens.ipynb          # Estratégias de chunking e tokenização
+│   ├── lab_3.4_microrag_chain.ipynb         # Mini RAG com LangChain (básico)
+│   ├── lab_3.5_microrag_chain_lcel.ipynb    # Mini RAG com LCEL (LangChain Expression Language)
+│   └── utils_pdf_generator.py               # Utilitário para gerar PDFs de teste
+│
+└── 4_producao/                 # RAG em Produção
+    └── lab_4.1_rag_qdrant.ipynb             # RAG com Qdrant (banco vetorial em produção)
 ```
 
 ## 🤝 Contribuição
@@ -110,7 +127,7 @@ Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](https://www.
 
 ## Para citações
 
-```bib
+```bibtex
 @software{amaral_bancodadosvetorial,
   author = {Anderson, Maxwell},
   title = {Banco de Dados Vetorial},
